@@ -1,0 +1,78 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
+<app-main-nav></app-main-nav>
+<html>
+  <head>
+    <title>Interface principal</title>
+  </head>
+  <div class="menu-modal" *ngIf="menu">
+    <div class="menu-container">
+      
+    </div>
+  </div>
+  <body>
+    <div id="main-div">
+      <div class="caption-div">
+        <table>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+          </tr>
+        </table>
+      </div>
+      <div id="canvas-div"></div>
+      <div class="menu-div">
+        <h2> Menu </h2>
+        <input type = "button" 
+               class = "menuButton" 
+               (click) = "cleanLeds()" 
+               value="Limpar"/> 
+        <input type = "button" 
+               class = "menuButton" 
+               (click) = "copyPrevLeds()" 
+               value="Copiar Anterior"/>
+        <input type = "button" 
+               class = "menuButton" 
+               (click) = "copyFirstFace()" 
+               value="Replicar Primeira Face"/> <br>
+        <input type = "button" 
+               class = "menuButton" 
+               (click) = "setLeds()" 
+               value="Setar"/> 
+        <input type = "button" 
+               class = "menuButton" 
+               (click) = "invLeds()" 
+               value="Inverter Leds"/>
+        <img src = "../assets/CUBO-1.png">
+        <input type = "button" class = "sendButton" (click) = "enviar()" value="Enviar"/>
+        <input type = "button" class = "resetButton" (click) = "resetar()" value="Reset"/>
+        
+        <div class="loader" *ngIf="loading"></div>
+      </div>
+      <div class="caption-div">
+          <table>
+            <tr>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+            </tr>
+          </table>
+        </div>
+    </div>
+    <div class="slidecontainer">
+      <input type="range" 
+             min="1" 
+             max="100" 
+             value="50" 
+             [(ngModel)]="frame" 
+             (change)="setFrame($event)" 
+             class="slider" 
+             id="myRange">
+    </div>
+    <!-- <input type = "text" [(ngModel)] = "nome" placeholder = "nome"/><br><br>
+    <input type = "text" [(ngModel)] = "descricao" placeholder = "descricao"/> <br><br>
+    <input type = "button" class = "sendButton" (click) = "enviarLetra()" value="Enviar Letra"/>  -->
+  </body>
+</html>

@@ -1,0 +1,16 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    
+    background: #282A36;
+}
+
+.title {
+    padding: 0.5% 2%;
+    /* color: rgb(0,100,255); */
+}

@@ -1,0 +1,32 @@
+<div class="sidenav-container">
+  <mat-sidenav-container class="sidenav-container">
+
+    <mat-sidenav #drawer fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="'over'"
+        [opened]="false"
+        fixedTopGap="64">
+      <mat-toolbar class="example-toolbar">LISTA DE EFEITOS</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item 
+          *ngFor='let efeito of efeitos' 
+          (click)="efeitoSelecionado(efeito)">
+          {{efeito.descricao}}
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <mat-toolbar class="barra-header">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon></button>
+        <span>META 2019 - CUBO DE LED 8x8x8</span>
+      </mat-toolbar>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+</div>
